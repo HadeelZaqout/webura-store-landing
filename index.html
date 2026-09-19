@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Store</title>
+
+<link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+<link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+<link rel="stylesheet" href="assets/css/cairo-font.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar py-3">
+  <div class="container d-flex align-items-center gap-3">
+    <a class="navbar-brand brand" href="#hero">
+      <img src="assets/img/logo-white.png" alt="Store" class="brand-logo">
+    </a>
+
+    <div class="search-pill flex-grow-1 d-none d-md-flex">
+      <button class="search-btn" type="button" onclick="document.getElementById('searchInput').focus()"><i class="bi bi-search"></i></button>
+      <input type="text" id="searchInput" class="form-control" placeholder="ما الذي تبحث عنه">
+    </div>
+
+    <div class="d-flex align-items-center gap-3 ms-auto ms-md-0">
+      <button class="nav-icon" type="button" data-bs-toggle="modal" data-bs-target="#locationModal"><i class="bi bi-geo-alt"></i></button>
+      <button class="nav-icon position-relative" id="wishBtn" type="button" data-bs-toggle="modal" data-bs-target="#wishModal">
+        <i class="bi bi-heart"></i>
+        <span class="cart-badge" id="wishBadge">0</span>
+      </button>
+      <button class="nav-icon position-relative" id="cartBtn" type="button" data-bs-toggle="modal" data-bs-target="#cartModal">
+        <i class="bi bi-cart3"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <button class="nav-icon" type="button" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person"></i></button>
+      <button class="nav-icon d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoriesDrawer" aria-controls="categoriesDrawer" aria-label="الأقسام"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+
+</nav>
+
+<!-- Sub nav -->
+<div class="subnav d-none d-md-block">
+  <div class="container">
+    <ul class="subnav-list">
+      <li><a href="#suggested" class="subnav-link">الأجهزة الخلوية</a></li>
+      <li><a href="#hero" class="subnav-link">أجهزة المنزل الذكية</a></li>
+      <li><a href="#best-selling" class="subnav-link">أجهزة لوحية و كمبيوتر</a></li>
+      <li><a href="#categories" class="subnav-link">سماعات</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Categories drawer (mobile) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="categoriesDrawer" aria-labelledby="categoriesDrawerLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="categoriesDrawerLabel">الأقسام</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="drawer-list">
+      <li><a href="#suggested" class="drawer-link">الأجهزة الخلوية</a></li>
+      <li><a href="#hero" class="drawer-link">أجهزة المنزل الذكية</a></li>
+      <li><a href="#best-selling" class="drawer-link">أجهزة لوحية و كمبيوتر</a></li>
+      <li><a href="#categories" class="drawer-link">سماعات</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero-section" id="hero">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-lg-6">
+        <a href="#suggested" class="banner banner-perfume h-100 d-block" aria-label="عطر فوّاح طوال اليوم - اطلب الآن"></a>
+      </div>
+      <div class="col-lg-6">
+        <div class="d-flex flex-column gap-3 h-100">
+          <a href="#categories" class="banner banner-protect flex-grow-1 d-block" aria-label="حماية كاملة لبيتك - اطلب الآن"></a>
+          <a href="#deals" class="banner banner-clean flex-grow-1 d-block" aria-label="تنظيف سهل وفعّال مع xiaomi - تسوق الآن"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Suggested products -->
+<section class="container py-5" id="suggested">
+  <h4 class="section-title mb-0">مقترحة لك</h4>
+  <div class="row g-4 mt-2" id="suggestedRow"></div>
+</section>
+
+<!-- Category strip -->
+<section class="bg-light-section py-5" id="categories">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="cat-card">
+          <img src="assets/img/cat-electronics-accessories.png" alt="اكسسوارات الكترونية" class="cat-icon-img">
+          <div class="cat-text">
+            <h6>اكسسوارات الكترونية</h6>
+            <a href="#suggested">عرض الجميع <i class="bi bi-chevron-left"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="cat-card">
+          <img src="assets/img/cat-massage.png" alt="أجهزة التدليك والاسترخاء" class="cat-icon-img">
+          <div class="cat-text">
+            <h6>أجهزة التدليك والاسترخاء</h6>
+            <a href="#best-selling">عرض الجميع <i class="bi bi-chevron-left"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="cat-card">
+          <img src="assets/img/cat-gaming.png" alt="اكسسوارات اللعب" class="cat-icon-img">
+          <div class="cat-text">
+            <h6>اكسسوارات اللعب</h6>
+            <a href="#deals">عرض الجميع <i class="bi bi-chevron-left"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Discount + Flash sale -->
+<section class="container py-5" id="deals">
+  <div class="row g-3" id="discountRow"></div>
+</section>
+
+<!-- Trust -->
+<section class="container py-3 mb-5">
+  <div class="row g-3 align-items-stretch">
+    <div class="col-lg-3 d-flex align-items-center">
+      <p class="trust-text">منصة تسوق إلكتروني رائدة محلياً توفر مجموعة متنوعة من المنتجات للتسوق بسهولة وأمان.</p>
+    </div>
+    <div class="col-lg-9">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="trust-card">
+            <img src="assets/img/icon-star.png" alt="منتجات أصلية" class="trust-icon-img">
+            <h6>منتجات أصلية</h6>
+            <a href="#footer-section">تفاصيل أكثر</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="trust-card">
+            <img src="assets/img/icon-shield.png" alt="كفالة سنوية" class="trust-icon-img">
+            <h6>كفالة سنوية</h6>
+            <a href="#footer-section">تفاصيل أكثر</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="trust-card">
+            <img src="assets/img/icon-lock.png" alt="طرق دفع امنة" class="trust-icon-img">
+            <h6>طرق دفع امنة</h6>
+            <a href="#footer-section">تفاصيل أكثر</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Best selling -->
+<section class="bg-light-section py-5" id="best-selling">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="section-title mb-0">المنتجات الأفضل مبيعاً</h4>
+      <a href="#suggested" class="see-all">عرض الجميع <i class="bi bi-chevron-left"></i></a>
+    </div>
+    <div class="row g-4 mt-2" id="bestSellingRow"></div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="container py-5" id="reviews">
+  <h4 class="text-center reviews-title"><i class="bi bi-heart-fill"></i> ماذا يقول عملاؤنا</h4>
+  <div class="row g-3 mt-3" id="reviewsRow"></div>
+</section>
+
+<!-- Footer -->
+<footer id="footer-section">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <h6 class="footer-title">متواجدين دائماً لمساعدتك</h6>
+        <button type="button" class="contact-card border-0 w-100" data-bs-toggle="modal" data-bs-target="#contactModal">
+          <i class="bi bi-envelope"></i>
+          <span>تواصل معنا</span>
+        </button>
+      </div>
+      <div class="col-lg-4">
+        <h6 class="footer-title">خليك متابع كل جديد</h6>
+        <p class="footer-sub">اشترك في النشرة الإخبارية ولا تفوتك العروض</p>
+        <form id="subscribeForm">
+          <input type="email" class="form-control mb-2" id="subscribeEmail" placeholder="أدخل بريدك الالكتروني" required>
+          <button type="submit" class="btn-subscribe w-100">اشترك الان</button>
+        </form>
+      </div>
+      <div class="col-lg-4">
+        <ul class="footer-links">
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">عن متجرنا</a></li>
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">تواصل معنا</a></li>
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#articlesModal">مقالات</a></li>
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#returnModal">سياسية التبديل و الارجاع</a></li>
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">الشروط و الاحكام</a></li>
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">سياسية الاستخدام</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Modals (replace dead # links with real in-page destinations) ===== -->
+<div class="modal fade" id="locationModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">حدد موقعك</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <p>اختر مدينتك لعرض المنتجات وأوقات التوصيل المتاحة في منطقتك.</p>
+        <select class="form-select">
+          <option>نابلس</option>
+          <option>رام الله</option>
+          <option>الخليل</option>
+          <option>نابلس - البلدة القديمة</option>
+        </select>
+      </div>
+      <div class="modal-footer"><button class="btn-subscribe px-4" data-bs-dismiss="modal">حفظ</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">تسجيل الدخول</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <input type="email" class="form-control mb-2" placeholder="البريد الالكتروني">
+        <input type="password" class="form-control" placeholder="كلمة المرور">
+      </div>
+      <div class="modal-footer"><button class="btn-subscribe px-4" data-bs-dismiss="modal">دخول</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cartModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">سلة المشتريات</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body" id="cartModalBody">
+        <p class="text-muted mb-0">سلتك فارغة حالياً. أضف منتجات لتظهر هنا.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="wishModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">المفضلة</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body" id="wishModalBody">
+        <p class="text-muted mb-0">لم تقم بإضافة أي منتج للمفضلة بعد.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="contactModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">تواصل معنا</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <p>يسعدنا تواصلك معنا عبر:</p>
+        <p class="mb-1"><i class="bi bi-envelope"></i> support@store.example</p>
+        <p class="mb-1"><i class="bi bi-telephone"></i> 059-000-0000</p>
+        <p class="mb-0"><i class="bi bi-geo-alt"></i> نابلس، فلسطين</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="aboutModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">عن متجرنا</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><p class="mb-0">منصة تسوق إلكتروني رائدة محلياً، نوفر مجموعة متنوعة من الأجهزة الالكترونية الأصلية بأسعار تنافسية وخدمة توصيل سريعة.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="articlesModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">مقالات</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><p class="mb-0">قسم المقالات قيد التحضير حالياً، تابعونا قريباً لقراءة أحدث المقالات والمراجعات التقنية.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="returnModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">سياسة التبديل و الارجاع</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><p class="mb-0">يمكنك استبدال أو إرجاع المنتج خلال 14 يوماً من تاريخ الاستلام بشرط أن يكون بحالته الأصلية وبكامل ملحقاته.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="termsModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">الشروط و الاحكام</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><p class="mb-0">باستخدامك للموقع فإنك توافق على شروط الاستخدام وسياسات الشراء والتوصيل المعتمدة لدى المتجر.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="privacyModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">سياسة الاستخدام</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><p class="mb-0">نحترم خصوصيتك ولا نشارك بياناتك مع أي جهة خارجية إلا بالقدر اللازم لإتمام عملية الشراء والتوصيل.</p></div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

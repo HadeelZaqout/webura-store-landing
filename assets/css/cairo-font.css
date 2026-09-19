@@ -1,0 +1,26 @@
+/* Cairo font, self-hosted for fully offline use */
+@font-face{font-family:'Cairo';font-style:normal;font-display:swap;font-weight:400;
+  src:url(../fonts/cairo/cairo-arabic-400-normal.woff2) format('woff2');
+  unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0893-0954,U+0958-077F,U+FB50-FDFF,U+FE70-FEFC;}
+@font-face{font-family:'Cairo';font-style:normal;font-display:swap;font-weight:400;
+  src:url(../fonts/cairo/cairo-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'Cairo';font-style:normal;font-display:swap;font-weight:500;
+  src:url(../fonts/cairo/cairo-arabic-500-normal.woff2) format('woff2');
+  unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0893-0954,U+0958-077F,U+FB50-FDFF,U+FE70-FEFC;}
+@font-face{font-family:'Cairo';font-style:normal;font-display:swap;font-weight:500;
+  src:url(../fonts/cairo/cairo-latin-500-normal.woff2) format('woff2');}
+@font-face{font-family:'Cairo';font-style:normal;font-display:swap;font-weight:600;
+  src:url(../fonts/cairo/cairo-arabic-600-normal.woff2) format('woff2');
+  unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0893-0954,U+0958-077F,U+FB50-FDFF,U+FE70-FEFC;}
+@font-face{font-family:'Cairo';font-style:normal;font-display:swap;font-weight:600;
+  src:url(../fonts/cairo/cairo-latin-600-normal.woff2) format('woff2');}
+@font-face{font-family:'Cairo';font-style:normal;font-display:swap;font-weight:700;
+  src:url(../fonts/cairo/cairo-arabic-700-normal.woff2) format('woff2');
+  unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0893-0954,U+0958-077F,U+FB50-FDFF,U+FE70-FEFC;}
+@font-face{font-family:'Cairo';font-style:normal;font-display:swap;font-weight:700;
+  src:url(../fonts/cairo/cairo-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:'Cairo';font-style:normal;font-display:swap;font-weight:800;
+  src:url(../fonts/cairo/cairo-arabic-800-normal.woff2) format('woff2');
+  unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0893-0954,U+0958-077F,U+FB50-FDFF,U+FE70-FEFC;}
+@font-face{font-family:'Cairo';font-style:normal;font-display:swap;font-weight:800;
+  src:url(../fonts/cairo/cairo-latin-800-normal.woff2) format('woff2');}
